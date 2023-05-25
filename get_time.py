@@ -20,6 +20,8 @@ for item in json_file['items']:
             completion_time = datetime.strptime(
                     item['status']['containerStatuses'][0]['state']['terminated']['finishedAt'],
                     time_format)
+            print("Job start time: ", start_time)
+            print("Job end time: ", completion_time)
             print("Job time: ", completion_time - start_time)
             start_times.append(start_time)
             completion_times.append(completion_time)
